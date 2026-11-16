@@ -3,3 +3,4 @@ graphify-out/cache/
 .netlify/
 node_modules/
 graphify-out/
+.claude/

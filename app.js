@@ -149,6 +149,7 @@ const LANGS = ["de","uk","en"];
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const $ = (s,r=document)=>r.querySelector(s), $$ = (s,r=document)=>[...r.querySelectorAll(s)];
 const esc = s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const BASE = document.documentElement.dataset.base || "";   // для страниц в подпапке (v2/): путь к общим картинкам
 let lang = "de";
 const SVC = ["brows","lips","lashline","liner","correction","removal"];
 const SVC_D = [[600,800],[600,800],[600,800],[600,800],[600,800],[600,800]];
@@ -256,7 +257,7 @@ function render(){
   $$("[data-i18n]").forEach(el=>{ el.textContent=el.dataset.i18n.split(".").reduce((o,k)=>o&&o[k],t)||""; });
   $("#facts").innerHTML=t.about.facts.map(f=>`<li><b>${esc(f[0])}</b>${esc(f[1])}</li>`).join("");
   const rows=r=>`<ul class="rows">${r.map(x=>`<li><span>${esc(x[0])}</span><b>${esc(x[1])}</b></li>`).join("")}</ul>`;
-  $("#cards").innerHTML=t.services.items.map((s,i)=>`<article class="card"><div class="ph photo"><img src="img/svc-${SVC[i]}.webp?v=20261115" width="${SVC_D[i][0]}" height="${SVC_D[i][1]}" alt="${esc(t.alt.svc[i]||"")}" loading="lazy" decoding="async"></div><div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>${rows(s[2])}</div></article>`).join("");
+  $("#cards").innerHTML=t.services.items.map((s,i)=>`<article class="card"><div class="ph photo"><img src="${BASE}img/svc-${SVC[i]}.webp?v=20261115" width="${SVC_D[i][0]}" height="${SVC_D[i][1]}" alt="${esc(t.alt.svc[i]||"")}" loading="lazy" decoding="async"></div><div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>${rows(s[2])}</div></article>`).join("");
   $("#formats").innerHTML=t.training.items.map(s=>`<div class="format"><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>${rows(s[2])}</div>`).join("");
   $("#prog").innerHTML=t.training.prog.map(x=>`<div class="format"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("");
   $("#incl").innerHTML=t.training.incl.map(s=>`<li>${esc(s)}</li>`).join("");
@@ -276,7 +277,7 @@ function setLang(l){ if(!LANGS.includes(l)) return; lang=l; store.set("lang",l);
 $$(".lang button").forEach(b=>{ b.onclick=()=>setLang(b.dataset.lang); });
 
 /* ---------- галерея + увеличение ---------- */
-$("#gallery").innerHTML=GAL.map(n=>`<button type="button"><div class="ph photo" data-ph="work" data-n="${n}"><img src="img/g${n}.webp?v=20261115" width="720" height="900" alt="" data-alt="work" data-n="${n}" loading="lazy" decoding="async"></div></button>`).join("");
+$("#gallery").innerHTML=GAL.map(n=>`<button type="button"><div class="ph photo" data-ph="work" data-n="${n}"><img src="${BASE}img/g${n}.webp?v=20261115" width="720" height="900" alt="" data-alt="work" data-n="${n}" loading="lazy" decoding="async"></div></button>`).join("");
 const lb=$("#lightbox"), lbClose=$(".x",lb);
 let lastFocus=null;
 function closeLb(){ if(!lb.classList.contains("open")) return; lb.classList.remove("open"); document.body.classList.remove("lock"); if(lastFocus) lastFocus.focus(); }
