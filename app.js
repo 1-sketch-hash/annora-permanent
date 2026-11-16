@@ -272,6 +272,7 @@ function render(){
   $$("img[data-alt]").forEach(i=>{ i.alt=(t.alt[i.dataset.alt]||"")+(i.dataset.n?" "+i.dataset.n:""); });
   $$("#gallery button").forEach(b=>b.setAttribute("aria-label",b.firstElementChild.dataset.label));
   wireLinks();
+  document.dispatchEvent(new Event("rendered"));   // дизайн-слой (fx.js) перестраивает эффекты после смены языка
 }
 function setLang(l){ if(!LANGS.includes(l)) return; lang=l; store.set("lang",l); render(); }
 $$(".lang button").forEach(b=>{ b.onclick=()=>setLang(b.dataset.lang); });

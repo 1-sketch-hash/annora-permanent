@@ -18,3 +18,8 @@ GitHub Pages: ветка `main`, корень. Любой `git push` в `main` �
 
 ## Аналитика
 Теги (GTM + Google Ads `gtag.js`) загружаются только после «Принять» в баннере (Consent Mode v2). События кликов уходят в `dataLayer`: `whatsapp_click`, `instagram_click`, `facebook_click`, `appointment_click`, `training_click`, `structure_open`.
+
+## Дизайн-варианты (черновики, noindex)
+- `v2/` — «Оливковое ателье» (отклонён).
+- `v3/` — «Noir Atelier»: тёмный кино-люкс. Шрифты Playfair Display (SIL OFL, `fonts/playfair-*.woff2`) + Manrope, лежат локально.
+  Контент и тексты общие (`../app.js`), эффекты — в `v3/fx.js`. Локально: `python3 -m http.server 4173` и открыть `/v3/`.
