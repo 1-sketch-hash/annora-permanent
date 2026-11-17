@@ -16,7 +16,7 @@
   /* --- плавные появления --- */
   const REVEAL=[".sec-head > *",".about-head > *",".about-body > *",".facts li",".train-txt > *",".t-photos .ph",
     ".format",".block > h3",".incl li",".kit-ph .ph",".kit-txt > *",".struct summary",".training > .btns",
-    ".models > div",".why > .eyebrow",".why > h2",".mq",".rev blockquote",".contact-in > *",".svc-foot > *"].join(",");
+    ".models > div",".why > .eyebrow",".why > h2",".adv li",".rev blockquote",".contact-in > *",".svc-foot > *"].join(",");
   const io="IntersectionObserver" in window ? new IntersectionObserver(es=>{
     es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
   },{rootMargin:"0px 0px -8% 0px",threshold:.08}) : null;
@@ -59,12 +59,6 @@
     words.forEach((w,i)=>w.classList.toggle("on",i<on));
   }
 
-  /* --- бегущая строка преимуществ: дубль набора для бесшовной петли --- */
-  function marquee(){
-    const ul=$("#adv"); if(!ul||reduce) return;
-    $$("li",ul).slice().forEach(li=>{ const c=li.cloneNode(true); c.setAttribute("aria-hidden","true"); ul.appendChild(c); });
-  }
-
   /* --- киноплёнка: перетаскивание мышью (на телефоне работает обычная прокрутка) --- */
   const gal=$("#gallery");
   let down=false,moved=false,sx=0,sl=0;
@@ -86,7 +80,7 @@
   },{passive:true});
   addEventListener("resize",paintManifest);
 
-  function setup(){ splitManifest(); marquee(); arm(); }
+  function setup(){ splitManifest(); arm(); }
   document.addEventListener("rendered",setup);
   setup();
 })();

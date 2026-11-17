@@ -199,16 +199,21 @@ section{padding:clamp(88px,12vw,180px) var(--pad);position:relative}
 .models .rows{margin-top:0}
 .models .btns{margin-top:26px}
 
-/* ---------- преимущества: бегущая строка ---------- */
-.why{padding-left:0;padding-right:0;background:var(--ink);overflow:hidden}
-.why>.eyebrow,.why>h2{padding:0 var(--pad)}
-.why>h2{font-size:clamp(28px,4vw,52px);max-width:var(--max)}
-.mq{margin-top:48px;overflow:hidden;border-block:1px solid var(--line);padding:26px 0}
-.adv{list-style:none;margin:0;padding:0;display:flex;width:max-content;animation:mq 60s linear infinite}
-.mq:hover .adv{animation-play-state:paused}
-.adv li{display:flex;align-items:center;white-space:nowrap;padding-right:.5em;font:italic 400 clamp(38px,6.4vw,92px)/1.1 var(--serif);color:var(--ivory)}
-.adv li::after{content:"";flex:none;width:.2em;height:.2em;margin-left:.5em;background:var(--gold);transform:rotate(45deg)}
-@keyframes mq{to{transform:translateX(-50%)}}
+/* ---------- преимущества: спокойная сетка с номерами ---------- */
+.why{background:var(--ink)}
+.why>h2{font-size:clamp(28px,4vw,52px)}
+.adv-wrap{max-width:var(--max);margin:48px auto 0}
+.adv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;border-top:1px solid var(--line);counter-reset:adv}
+.adv li{counter-increment:adv;display:flex;align-items:baseline;gap:18px;padding:24px 0;border-bottom:1px solid var(--line);
+  font:italic 400 clamp(24px,2.6vw,34px)/1.2 var(--serif);color:var(--ivory)}
+.adv li::before{content:counter(adv,decimal-leading-zero);flex:none;font:500 12px/1 var(--sans);letter-spacing:.2em;color:var(--gold)}
+@media (min-width:640px){
+  .adv{grid-template-columns:1fr 1fr;column-gap:48px}
+}
+@media (min-width:900px){
+  .adv{grid-template-columns:repeat(3,1fr);column-gap:56px}
+  .adv li{padding:34px 0}
+}
 
 /* ---------- отзывы ---------- */
 .reviews{background:linear-gradient(180deg,var(--ink),#150a10);padding-left:0;padding-right:0}
@@ -327,5 +332,4 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
   .fx .rv{opacity:1;transform:none}
   .manifest-text .w{opacity:1}
   .card .ph img{transform:none}
-  .adv{flex-wrap:wrap;width:auto;justify-content:center}
 }
