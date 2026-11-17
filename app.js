@@ -4,7 +4,12 @@ const CONFIG = {
   instagram: "annora_permanent",
   whatsapp: "4915228742115",   // номер без + и пробелов
   facebookUrl: "https://www.facebook.com/share/1CsFVmTBYj/",   // страница Facebook (без трекинг-параметров)
-  gtmId: "GTM-KB9NSLTW",             // TODO GTM-XXXXXXX
+  telegram: {                      // каналы Telegram (имя после t.me/); пустая строка — пункт скрыт
+    clients: "annorapermanentclients",   // для клиентов и моделей
+    artists: "annorapermanetartists",    // для мастеров и учеников (канал так и называется)
+    personal: ""                         // личный канал Анны — вписать, когда пришлёт ссылку
+  },
+  gtmId: "GTM-KB9NSLTW",             // контейнер Google Tag Manager
   adsId: "AW-10978525985"            // Google Ads (gtag.js), грузится только после согласия
 };
 
@@ -48,6 +53,7 @@ de:{
   rev:{eyebrow:"Bewertungen",title:"Stimmen von Kundinnen und Schülerinnen",items:[["Ich kann mich gar nicht sattsehen – ich strahle heute den ganzen Tag, die Begeisterung weicht nicht von meinen Lippen. Sie sind wunderschön, perfekt und einfach zauberhaft. Sie sind eine großartige Meisterin und zugleich eine warmherzige, liebe, zarte und bezaubernde junge Frau. Tausend Dank!","Kundin · Lippen"],["Das ist noch untertrieben. Du bist einfach eine Zauberin, ich bin immer noch ganz hin und weg und kann nicht aufhören, mich anzusehen. Ich werde nur dich weiterempfehlen, Anna.","Kundin"],["Mir hat alles gefallen – Annas Zugang zu ihrer Arbeit. Dank ihrer Erklärungen und ihrer Hilfe habe ich gelernt, wunderschöne Augenbrauen zu machen. Die Atmosphäre in der Ausbildung war ganz besonders. Ich komme auch zum Remover wieder.","Schülerin · Basiskurs"],["Ich habe den Basiskurs für Permanent Make-up von Augenbrauen und Lippen absolviert. Die Ausbildung hat mir sehr gefallen: alle Videos in hervorragender Qualität, die Informationen sind maximal verständlich, nach dem Anschauen bleiben kaum Fragen offen. Anna war immer erreichbar und hat mir geholfen, mein Starter-Set für die Ausbildung aufzuwerten. Insgesamt sind meine Eindrücke durchweg positiv.","Schülerin · Online-Kurs"],["Ich habe lange gezögert, wo ich einen Permanent-Make-up-Kurs machen soll. Ich habe viel recherchiert, dich gefunden und sofort geschrieben – denn was du machst, ist pure Schönheit, deine Hände sind einfach golden. Am meisten hatte ich Angst davor, an Modellen zu beginnen, und ich bin so dankbar, dass du immer an meiner Seite warst. Ich habe nach Gold gesucht und den schönsten Schatz gefunden.","Schülerin · Permanent-Make-up-Kurs"],["Anna, von Herzen Danke für diesen Tag und diese kraftvolle Masterclass! Ihre Energie, Ihre Art zu vermitteln, Ihre Liebe zur Arbeit – das ist einfach Feuer. Mit Ihnen möchte man wachsen, kreativ sein, nicht stehen bleiben. Ich habe schon zwei Kurse bei Ihnen gemacht und verfolge Sie seitdem ständig: Ihre Arbeiten, Ihre Seite, Ihr Ansatz – alles motiviert und gibt Selbstvertrauen.","Teilnehmerin · Masterclass"]]},
   contact:{eyebrow:"Kontakt",title:"Schreiben Sie Anna",lead:"Termin, Frage zur Behandlung oder Ausbildung – direkt und persönlich im Messenger."},
   cta:{book:"Termin anfragen",apply:"Ausbildung anfragen",more:"Mehr auf Instagram"},
+  tg:{clients:"Für Kundinnen & Models",artists:"Für Artists & Schülerinnen",personal:"Persönlicher Kanal von Anna"},
   foot:{imprint:"Impressum",privacy:"Datenschutz",cookies:"Cookie-Einstellungen"},
   consent:{text:"Wir nutzen Google Tag Manager, Google Analytics und Google Ads nur mit Ihrer Einwilligung, um die Nutzung der Website statistisch auszuwerten und unsere Werbung zu messen. Sie können Ihre Wahl jederzeit ändern.",no:"Ablehnen",yes:"Akzeptieren"},
   ph:{hero:"Foto · Anna",about:"Foto · Porträt",train:"Foto · Schulung",student:"Foto · Schülerarbeit",work:"Foto · Arbeit"},
@@ -93,6 +99,7 @@ uk:{
   rev:{eyebrow:"Відгуки",title:"Кажуть клієнтки й учениці",items:[["Я не можу налюбуватися — сьогодні цілий день сяю, захват не сходить з моїх вуст. Вони прекрасні, ідеальні й просто феєричні. Ви мега крутий майстер і водночас тепла, мила, ніжна й чарівна дівчина. Величезне вам дякую!","Клієнтка · губи"],["Ой, не те слово. Ти просто чарівниця, я досі не можу отямитись — дивлюся й не надивлюся. Рекомендуватиму тільки тебе, Анечко.","Клієнтка"],["Усе сподобалось — підхід Ані до своєї справи. Завдяки її поясненням і допомозі я навчилась робити шикарні брови. Атмосфера на навчанні була взагалі особлива. Прийду ще на ремувер.","Учениця · базовий курс"],["Я пройшла базовий курс з перманентного макіяжу брів і губ. Навчання дуже сподобалось: усі відео в чудовій якості, інформація подається максимально зрозуміло, питань після перегляду мінімум. Аня завжди була на зв’язку й допомогла мені з перетворенням стартового набору для навчання. Загалом враження найпозитивніші.","Учениця · онлайн-курс"],["Я довго вагалась, де проходити курси перманенту. Сиділа, вичитувала — і ось знайшла тебе й одразу написала, бо те, що ти робиш, — це краса, твої руки просто золоті. Найбільше мене лякало почати робити перманент на моделях, і я дуже вдячна, що ти завжди була поруч. Я шукала золото, а знайшла скарб найпрекрасніший.","Учениця · курс перманенту"],["Аню, щиро дякую за цей день і такий потужний майстер-клас! Ваша енергія, подача, любов до справи — це просто вогонь. З вами хочеться рости, творити, не зупинятись. Я проходила у вас уже два курси й відтоді постійно стежу за вами: ваші роботи, сторінка, підхід — усе заряджає на розвиток і дає віру в себе.","Учасниця · майстер-клас"]]},
   contact:{eyebrow:"Контакти",title:"Напишіть Анні",lead:"Запис, питання про процедуру чи навчання — напряму в месенджері."},
   cta:{book:"Записатися",apply:"Заявка на навчання",more:"Більше в Instagram"},
+  tg:{clients:"Для клієнтів і моделей",artists:"Для майстрів і учнів",personal:"Особистий канал Анни"},
   foot:{imprint:"Impressum",privacy:"Конфіденційність",cookies:"Налаштування cookies"},
   consent:{text:"Ми використовуємо Google Tag Manager, Google Analytics і Google Ads лише з вашої згоди, щоб вести статистику відвідувань сайту та вимірювати ефективність реклами. Вибір можна змінити будь-коли.",no:"Відхилити",yes:"Прийняти"},
   ph:{hero:"Фото · Анна",about:"Фото · Портрет",train:"Фото · Навчання",student:"Фото · Робота учениці",work:"Фото · Робота"},
@@ -138,6 +145,7 @@ en:{
   rev:{eyebrow:"Reviews",title:"What clients and students say",items:[["I can’t stop admiring them – I’ve been glowing all day, the delight won’t leave my lips. They are beautiful, perfect, simply magical. You are an incredibly skilled artist and at the same time a warm, sweet, gentle and charming young woman. Thank you so much!","Client · lips"],["“Amazing” isn’t even the word. You’re simply a magician, I still can’t get over it and keep admiring the result. I will recommend only you, Anna.","Client"],["I loved everything – Anna’s approach to her craft. Thanks to her explanations and help I learned to do gorgeous brows. The atmosphere during the training was really special. I’ll be back for the remover.","Student · basic course"],["I completed the basic permanent make-up course for brows and lips. I really enjoyed the training: all videos in excellent quality, the information is as clear as it gets, and very few questions are left after watching. Anna was always available and helped me upgrade my starter set for the training. Overall, my impressions are entirely positive.","Student · online course"],["I hesitated for a long time about where to take a permanent make-up course. I searched and read a lot, found you and wrote right away – because what you do is pure beauty, your hands are simply golden. My biggest fear was starting on models, and I’m so grateful you were always by my side. I was looking for gold and found the most beautiful treasure.","Student · permanent make-up course"],["Anna, thank you so much for this day and such a powerful masterclass! Your energy, your delivery, your love for the craft – it’s simply fire. With you, you want to grow, create, never stop. I’ve already taken two courses with you and have followed you ever since: your work, your page, your approach – it all energises and gives confidence.","Participant · masterclass"]]},
   contact:{eyebrow:"Contact",title:"Message Anna",lead:"Appointments, questions about treatments or training – directly in your messenger."},
   cta:{book:"Book an appointment",apply:"Apply for Training",more:"See more on Instagram"},
+  tg:{clients:"For clients & models",artists:"For artists & students",personal:"Anna's personal channel"},
   foot:{imprint:"Impressum",privacy:"Privacy",cookies:"Cookie settings"},
   consent:{text:"We use Google Tag Manager, Google Analytics and Google Ads only with your consent, to measure how this website is used and how our ads perform. You can change your choice at any time.",no:"Decline",yes:"Accept"},
   ph:{hero:"Photo · Anna",about:"Photo · Portrait",train:"Photo · Training",student:"Photo · Student work",work:"Photo · Work"},
@@ -160,6 +168,7 @@ const LINKS = {
   instagram: clean(CONFIG.instagram,/^[A-Za-z0-9._]{1,30}$/),
   whatsapp:  clean(CONFIG.whatsapp,/^[1-9][0-9]{7,14}$/),
   facebook:  clean(CONFIG.facebookUrl,/^https:\/\/www\.facebook\.com\/[A-Za-z0-9._\/-]{1,100}$/),
+  telegram:  Object.fromEntries(Object.entries(CONFIG.telegram||{}).map(([k,v])=>[k,clean(v,/^[A-Za-z][A-Za-z0-9_]{4,31}$/)])),
   gtm:       clean(CONFIG.gtmId,/^GTM-[A-Z0-9]{4,12}$/),
   ads:       clean(CONFIG.adsId,/^AW-[0-9]{6,12}$/)
 };
@@ -185,6 +194,7 @@ const utm = (()=>{
 function href(channel,intent){
   if(channel==="instagram" && LINKS.instagram) return intent==="profile" ? `https://www.instagram.com/${LINKS.instagram}/` : `https://ig.me/m/${LINKS.instagram}`;
   if(channel==="facebook" && LINKS.facebook) return LINKS.facebook;
+  if(channel==="telegram" && LINKS.telegram[intent]) return `https://t.me/${LINKS.telegram[intent]}`;
   if(channel==="whatsapp" && LINKS.whatsapp) return `https://wa.me/${LINKS.whatsapp}?text=${encodeURIComponent(T[lang].wa[intent]||T[lang].wa.appointment)}`;
   return "#contact";
 }
@@ -194,8 +204,14 @@ function wireLinks(){
     a.href=u;
     if(ext){ a.target="_blank"; a.rel="noopener noreferrer"; a.dataset.live="1"; }
     else { a.removeAttribute("target"); a.removeAttribute("rel"); delete a.dataset.live; }
+    if(a.dataset.channel==="telegram") a.hidden=!ext;     // пункт без ссылки не показываем
   });
+  $$("details.tg").forEach(d=>{ d.hidden=!d.querySelector("a[data-channel=telegram]:not([hidden])"); });
 }
+/* меню Telegram: закрывается после выбора и по клику вне его */
+document.addEventListener("click",e=>{
+  $$("details.tg[open]").forEach(d=>{ if(!d.contains(e.target) || e.target.closest("a")) d.open=false; });
+});
 
 /* ---------- аналитика: события уходят в dataLayer (GTM → GA4) ---------- */
 window.dataLayer = window.dataLayer || [];
@@ -256,7 +272,7 @@ function render(){
   $$("[data-i18n]").forEach(el=>{ el.textContent=el.dataset.i18n.split(".").reduce((o,k)=>o&&o[k],t)||""; });
   $("#facts").innerHTML=t.about.facts.map(f=>`<li><b>${esc(f[0])}</b>${esc(f[1])}</li>`).join("");
   const rows=r=>`<ul class="rows">${r.map(x=>`<li><span>${esc(x[0])}</span><b>${esc(x[1])}</b></li>`).join("")}</ul>`;
-  $("#cards").innerHTML=t.services.items.map((s,i)=>`<article class="card"><div class="ph photo"><img src="img/svc-${SVC[i]}.webp?v=20261115" width="${SVC_D[i][0]}" height="${SVC_D[i][1]}" alt="${esc(t.alt.svc[i]||"")}" loading="lazy" decoding="async"></div><div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>${rows(s[2])}</div></article>`).join("");
+  $("#cards").innerHTML=t.services.items.map((s,i)=>`<article class="card"><div class="ph photo"><img src="img/svc-${SVC[i]}.webp?v=20261117" width="${SVC_D[i][0]}" height="${SVC_D[i][1]}" alt="${esc(t.alt.svc[i]||"")}" loading="lazy" decoding="async"></div><div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>${rows(s[2])}</div></article>`).join("");
   $("#formats").innerHTML=t.training.items.map(s=>`<div class="format"><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p>${rows(s[2])}</div>`).join("");
   $("#prog").innerHTML=t.training.prog.map(x=>`<div class="format"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("");
   $("#incl").innerHTML=t.training.incl.map(s=>`<li>${esc(s)}</li>`).join("");
