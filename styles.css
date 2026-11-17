@@ -184,6 +184,23 @@ footer a,footer button{all:unset;display:inline-block;padding:10px 0;cursor:poin
 .consent .btn{min-height:44px;font-size:11px;padding:0 10px;width:100%}
 
 .note:empty{display:none}
+/* акция: полоска сверху и блок с таймером */
+.promo-bar{display:block;background:var(--wine);color:var(--paper);text-align:center;font:700 12.5px/1.4 var(--sans);letter-spacing:.03em;padding:9px var(--pad);text-decoration:none}
+.promo-bar:hover{background:var(--wine-deep)}
+.promo-bar[hidden],.promo[hidden]{display:none}
+.promo{margin-top:28px;background:linear-gradient(135deg,var(--wine),var(--wine-deep));color:var(--paper);border-radius:24px;padding:28px 18px;text-align:center;display:grid;gap:12px;justify-items:center;scroll-margin-top:90px}
+.promo-tag{margin:0;font:800 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--sand);border:1px solid rgba(233,220,205,.45);border-radius:99px;padding:7px 14px}
+.promo-title{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(28px,7vw,40px);letter-spacing:.01em;color:var(--paper)}
+.promo-price{margin:0;font:800 clamp(34px,9vw,48px)/1 var(--sans)}
+.promo-price s{font-size:.5em;font-weight:600;opacity:.6;margin-right:6px}
+.promo-text{margin:0;max-width:440px;font-size:14.5px;color:rgba(255,250,245,.85)}
+.timer{display:grid;grid-template-columns:repeat(4,minmax(60px,78px));gap:8px;margin:4px 0 6px}
+.timer div{display:grid;gap:4px;background:rgba(255,250,245,.08);border:1px solid rgba(233,220,205,.3);border-radius:14px;padding:12px 4px 9px}
+.timer b{font:800 clamp(24px,6.5vw,32px)/1 var(--sans);font-variant-numeric:tabular-nums}
+.timer span{font:700 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
+.promo .btn{min-width:240px}
+.rows b.deal s{color:var(--muted);font-weight:600;margin-right:2px}
+.training .cert{color:var(--sand);font-size:14.5px;margin:18px 0 0}
 .note{background:#fff3cd;color:#5c4400;font-size:12.5px;text-align:center;padding:8px var(--pad)}
 
 @media(min-width:760px){

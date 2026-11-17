@@ -15,6 +15,7 @@
 <body>
 
 <div class="note" data-i18n="note"></div>
+<a class="promo-bar" id="promoBar" href="#promo" hidden></a>
 
 <header>
   <div class="wrap bar">
@@ -71,6 +72,19 @@
     <p class="eyebrow" data-i18n="services.eyebrow"></p>
     <h2 data-i18n="services.title"></h2>
     <p class="lead" data-i18n="services.lead"></p>
+    <div class="promo" id="promo" hidden>
+      <p class="promo-tag" data-i18n="promo.tag"></p>
+      <h3 class="promo-title" data-i18n="promo.title"></h3>
+      <p class="promo-price"><s id="promoOld"></s> <b id="promoNew"></b></p>
+      <p class="promo-text" id="promoText"></p>
+      <div class="timer" id="promoTimer" role="timer">
+        <div><b data-u="d">00</b><span data-i18n="promo.d"></span></div>
+        <div><b data-u="h">00</b><span data-i18n="promo.h"></span></div>
+        <div><b data-u="m">00</b><span data-i18n="promo.m"></span></div>
+        <div><b data-u="s">00</b><span data-i18n="promo.s"></span></div>
+      </div>
+      <a class="btn light solid" data-channel="whatsapp" data-intent="promo"><svg><use href="#i-wa"/></svg><span data-i18n="promo.cta"></span></a>
+    </div>
     <div class="cards" id="cards"></div>
     <p class="fine" data-i18n="services.combo"></p>
     <p class="fine" data-i18n="services.onreq"></p>
@@ -103,6 +117,7 @@
       </div>
     </div>
     <div class="formats" id="formats"></div>
+    <p class="cert" data-i18n="training.cert"></p>
     <div class="prog">
       <h3 data-i18n="training.progTitle"></h3>
       <div class="formats" id="prog"></div>
