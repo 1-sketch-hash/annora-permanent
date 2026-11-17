@@ -11,10 +11,13 @@
 ## Публикация
 GitHub Pages: ветка `main`, корень. Любой `git push` в `main` обновляет сайт за 1–2 минуты. Заголовки из `_headers` GitHub Pages не применяет (они нужны, если сайт переедет на Netlify/Cloudflare); защита держится на CSP в `<meta>`.
 
-## Перед запуском (убрать «черновой» режим)
-- Удалить `<meta name="robots" content="noindex, nofollow">` из трёх HTML и `X-Robots-Tag` из `_headers`.
-- Заполнить пометки `todo` и убрать «ENTWURF» в `impressum.html` и `datenschutz.html`; юридическая проверка.
-- Google: принять AVV/DPA, Analytics — срок хранения 2/14 мес., Google Signals выключены; для Google Ads проверить ремаркетинг.
+## Запуск (17.11.2026) и что осталось
+Сайт открыт для поиска: `noindex` снят с главной; Impressum и Datenschutz — `noindex, follow` (в поиске не нужны). Пометки «ENTWURF» и жёлтые `todo` убраны, хостинг в Datenschutz — GitHub Pages.
+
+Осталось доделать (сейчас не видно на сайте):
+- Impressum: USt-IdNr (§ 27a UStG) или указание на Kleinunternehmerregelung (§ 19 UStG); подтвердить членство в Handwerkskammer и Berufsbezeichnung.
+- Юридическая проверка Impressum и Datenschutz.
+- Google: принять AVV/DPA в Ads и Analytics; Analytics — срок хранения 2/14 мес., Google Signals выключены; в Ads проверить ремаркетинг/персонализацию.
 
 ## Аналитика
 Теги (GTM + Google Ads `gtag.js`) загружаются только после «Принять» в баннере (Consent Mode v2). События кликов уходят в `dataLayer`: `whatsapp_click`, `instagram_click`, `facebook_click`, `appointment_click`, `training_click`, `structure_open`.
