@@ -20,4 +20,4 @@ GitHub Pages: ветка `main`, корень. Любой `git push` в `main` �
 - Google: принять AVV/DPA в Ads и Analytics; Analytics — срок хранения 2/14 мес., Google Signals выключены; в Ads проверить ремаркетинг/персонализацию.
 
 ## Аналитика
-Теги (GTM + Google Ads `gtag.js`) загружаются только после «Принять» в баннере (Consent Mode v2). События кликов уходят в `dataLayer`: `whatsapp_click`, `instagram_click`, `facebook_click`, `appointment_click`, `training_click`, `structure_open`.
+Теги загружаются только после «Принять» в баннере (Consent Mode v2): GTM `GTM-KB9NSLTW` (внутри него GA4) и отдельно из кода сайта Google Ads `AW-10978525985`. В GTM тега Ads нет — если добавить его туда, из `app.js` (`loadAds`) убрать, иначе будет двойной подсчёт. События кликов уходят в `dataLayer`: `whatsapp_click`, `instagram_click`, `facebook_click`, `appointment_click`, `training_click`, `structure_open`.
